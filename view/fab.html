@@ -1,0 +1,5 @@
+{{define "fab"}}
+<button hx-post="/todo" hx-target="#todos" hx-swap="beforeend" class="fixed z-10 bottom-10 right-8 bg-blue-500 hover:bg-blue-600 transition w-20 h-20 rounded-full drop-shadow-lg flex justify-center items-center">
+  {{template "icon-plus"}}
+</button>
+{{end}}

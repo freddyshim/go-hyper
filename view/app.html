@@ -1,0 +1,6 @@
+{{define "app"}}
+<div class="flex flex-col justify-center items-center space-y-4">
+  <div hx-get="/todo" hx-trigger="load">todos</div>
+</div>
+{{template "fab"}}
+{{end}}

@@ -1,0 +1,7 @@
+{{define "todos"}}
+<div id="todos" class="w-screen max-w-xl h-screen max-h-screen flex flex-col justify-center items-center space-y-4 overflow-scroll">
+  {{range .}}
+    {{template "todo" .}}
+  {{end}}
+</div>
+{{end}}

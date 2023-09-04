@@ -1,0 +1,13 @@
+{{define "todo-edit"}}
+<div id="todo-{{.ID}}" class="relative group w-full flex justify-start items-center text-black bg-slate-200 hover:bg-slate-300 rounded-md px-6 py-3">
+  <textarea id="content-{{.ID}}" name="content" value="content" placeholder="Enter text here..." class="w-full max-h-[200px] bg-white rounded-md px-2 py-1 overflow-x-hidden resize-none outline-none overflow-y-auto transition" contenteditable autofocus>{{.Content}}</textarea>
+  <div class="absolute top-1 right-1 transition opacity-0 group-hover:opacity-100">
+    <button hx-put="/todo/{{.ID}}" hx-include="#content-{{.ID}}" hx-target="#todo-{{.ID}}" hx-swap="outerHTML" class="text-green-500">
+      {{template "icon-confirm"}}
+    </button>
+    <button hx-get="/todo/{{.ID}}" hx-target="#todo-{{.ID}}" hx-swap="outerHTML" class="text-red-500">
+      {{template "icon-cancel"}}
+    </button>
+  </div>
+</div>
+{{end}}
